@@ -59,4 +59,24 @@ class ModeloEstudiantes
             return "Error";
         }
     }
+
+    #funcion para eliminar un estudiante
+    public static function eliminarEstudiante($id)
+    {
+        $stm = conexion::conectar()->prepare("DELETE FROM estudiantes WHERE id_estudiante = :id_estudiante");
+        $stm->bindParam(":id_estudiante", $id, PDO::PARAM_INT);
+        if ($stm->execute()) {
+            return "1";
+        } else {
+            return "0";
+        }
+    }
+
+    #funcion para contar los estudiantes
+    public static function mdlContarEstudiantes()
+    {
+        $stm = conexion::conectar()->prepare("SELECT count(*) as numeroEstudiantes FROM estudiantes");
+        $stm->execute();
+        return $stm->fetch();
+    }
 }

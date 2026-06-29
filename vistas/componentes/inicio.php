@@ -9,8 +9,7 @@
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Blank Page</li>
+
           </ol>
         </div>
       </div>
@@ -24,16 +23,34 @@
     <div class="card">
 
     </div>
+    <?php
+    $objEstudiante = new ControladorEstudiante();
+    $dataEstudiantes = $objEstudiante->ctrContarEstudiantes();
+    ?>
+
     <div class="card-body">
-      Construcción de las paginas
+      <div class="row">
+        <!-- empieza primera tarjeta ingres -->
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-info">
+            <div class="inner">
+              <h3><?php echo $dataEstudiantes['numeroEstudiantes']; ?></h3>
+
+              <p>Estudiantes</p>
+            </div>
+            <div class="icon">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+            <a href="estudiantes" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- /.card-body -->
+      </div>
     </div>
     <!-- /.card-body -->
+  </section>
 
-
-</div>
-<!-- /.card -->
-
-</section>
-<!-- /.content -->
+  <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->

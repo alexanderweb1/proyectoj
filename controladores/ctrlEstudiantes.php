@@ -111,4 +111,18 @@ class ControladorEstudiante
             }
         }
     }
+
+    #funcion para eliminar un estudiante
+    public static function ctrlEliminarEstudiante($id)
+    {
+        $res = ModeloEstudiantes::eliminarEstudiante($id);
+        return $res;
+    }
+
+    #funcion para contar los ingresos
+    public function ctrContarEstudiantes()
+    {
+        $res = ModeloEstudiantes::mdlContarEstudiantes();
+        return $res;
+    }
 }

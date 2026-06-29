@@ -250,6 +250,7 @@
                                 </div>
 
                                 <input type="hidden" id="editarIdEstudiante" name="editarIdEstudiante">
+                                <input type="hidden" id="eliminarIdUsuario" name="eliminarIdUsuario">
 
                                 <div class="modal-footer">
                                     <button type="submit" class="btn btn-primary">

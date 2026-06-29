@@ -12,6 +12,13 @@ class estudiantesAjax
         $respuesta = ControladorEstudiante::ctrlCargarDatosEstudiante($parametros, $id);
         echo json_encode($respuesta);
     }
+
+    public function eliminarEstudiante()
+    {
+        $id = $this->id_estudiante;
+        $respuesta = ControladorEstudiante::ctrlEliminarEstudiante($id);
+        echo json_encode($respuesta);
+    }
 }
 if (isset($_POST["id_estudiante"])) {
     $objEstudiantesAjax = new estudiantesAjax();
@@ -19,6 +26,9 @@ if (isset($_POST["id_estudiante"])) {
     switch ($_POST['operacion']) {
         case 'editar':
             $objEstudiantesAjax->traerDatosEstudiante();
+            break;
+        case 'eliminar':
+            $objEstudiantesAjax->eliminarEstudiante();
             break;
     }
 }
